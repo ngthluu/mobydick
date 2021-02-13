@@ -35,14 +35,19 @@ char* get_text_from_file(char* filepath) {
     return src;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
 
-    char* src = get_text_from_file("sample-src.moby");
-    if (src == NULL) {
+    if (argc < 2) {
+        printf("Please type the source file path\n");
         return 1;
     }
     
-    g
+    char* src = get_text_from_file(argv[1]);
+    if (src == NULL) {
+        return 1;
+    }
+
+    // Code here
 
     free(src);
     return 0;

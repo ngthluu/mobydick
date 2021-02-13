@@ -3,6 +3,7 @@ SRC_LOCATE=./src
 TEST_LOCATE=./test
 
 OUTPUT_FILE=compiler
+SAMPLE_SRC=sample-src.moby
 
 CFLAGS=-Wall
 
@@ -31,7 +32,7 @@ main:
 	gcc -c $(SRC_LOCATE)/main.c $(CFLAGS)
 
 run:
-	$(BUILD_LOCATE)/$(OUTPUT_FILE)
+	$(BUILD_LOCATE)/$(OUTPUT_FILE) $(SAMPLE_SRC)
 
 clean:
 	rm -rf $(BUILD_LOCATE)/*
