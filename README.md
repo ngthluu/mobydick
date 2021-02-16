@@ -1,6 +1,5 @@
 # Mobydick programming language
 Mobydick programming language is a simple, compiled and functional programming language. The compiler (v1.0) is written in C. 
-Everything in polarbear language is a **expression**.
 ## Lexical elements
 - ID
 - Numeric
@@ -26,6 +25,7 @@ Everything in polarbear language is a **expression**.
     - String: Add.
 
 ## Syntax
+- Everything in mobydick is an **expression**.
 - Every seperate expression must be seperated by semicolon `;`.
 - Assign expression: `ID = expression`. The value of this expression is `expression`.
 - Conditional expression: `expression1 ? expression2` (if `expression2` true then the value is `expression1`, `null` otherwise).

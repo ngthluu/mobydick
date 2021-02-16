@@ -88,7 +88,6 @@ void remove_spaces(char* s) {
 }
 
 void remove_comments(char *s) {
-    // char* pattern = "//(^(\n))*\n";
     char* pattern = "//[^\n]*\n";
     regex_t regex;
     int msg;
