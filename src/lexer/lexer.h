@@ -1,10 +1,12 @@
 #ifndef __LEXER_H__
 #define __LEXER_H__
 
-typedef enum t_token {
+typedef enum {
+    BEGIN_PLACEHOLDER,
+
     ID,             // ID
-    INT_LIT,        // Integer literals
     REAL_LIT,       // Real literals
+    INT_LIT,        // Integer literals
     STR_LIT,        // String literals
     OP_AND,         // &&
     OP_OR,          // ||
@@ -29,11 +31,16 @@ typedef enum t_token {
     COMMA,          // ,
     SEMICOLON,      // ;
     ASSIGN,         // =
-    INFER           // =>
-} t_token;
+    INFER,          // =>
 
+    END_PLACEHOLDER
+} token_id;
 
+typedef struct {
+    token_id id;
+    char* src;
+} token_t;
 
-t_token* get_tokens_from(char* src);
+token_t* get_tokens_from(char* src);
 
 #endif
