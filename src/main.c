@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Code here
-    token_t* tokens_list = get_tokens_from(src);
+    get_tokens_from(src);
     free(src);
     return 0;
 }

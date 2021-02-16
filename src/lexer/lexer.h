@@ -12,10 +12,10 @@ typedef enum {
     OP_OR,          // ||
     OP_NOT,         // !!
     OP_IS,          // ==
-    OP_GR,          // >
-    OP_LS,          // <
     OP_GRE,         // >=
     OP_LSE,         // <=
+    OP_GR,          // >
+    OP_LS,          // <
     OP_ADD,         // +
     OP_SUB,         // -
     OP_MUL,         // *
@@ -30,8 +30,8 @@ typedef enum {
     BCE_END,        // }
     COMMA,          // ,
     SEMICOLON,      // ;
-    ASSIGN,         // =
     INFER,          // =>
+    ASSIGN,         // =
 
     END_PLACEHOLDER
 } token_id;
