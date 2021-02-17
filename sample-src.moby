@@ -5,4 +5,4 @@ fib = (n) => {
     => self(n-2) + self(n-1) // Normal case
 }
 
-print(fib(10))
+print("The 10th element of the Fibonacci sequence: " + fib(10))

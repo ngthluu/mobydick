@@ -41,6 +41,6 @@ typedef struct {
     char* src;
 } token_t;
 
-token_t* get_tokens_from(char* src);
+token_t* get_tokens_from(char* src, int* n_tokens);
 
 #endif

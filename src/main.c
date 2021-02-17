@@ -48,7 +48,18 @@ int main(int argc, char* argv[]) {
     }
 
     // Code here
-    get_tokens_from(src);
+    int n_tokens = 0;
+    token_t* tokens = get_tokens_from(src, &n_tokens);
+    printf("%d\n", n_tokens);
+    for (int i = 0; i < n_tokens; i++) {
+        printf("%s ", tokens[i].src);
+    }
+
+    // Free stuffs
+    for (int i = 0; i < n_tokens; i++) {
+        free(tokens[i].src);
+    }
+    free(tokens);
     free(src);
     return 0;
 }

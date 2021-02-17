@@ -11,7 +11,7 @@ char* get_first_match(char* str, char* pattern);
 char* get_regex_of_token_id(token_id id);
 void remove_spaces(char *s);
 void remove_comments(char *s);
-token_t* get_tokens_from(char* src);
+token_t* get_tokens_from(char* src, int* n_tokens);
 
 
 // Functions implementation
@@ -120,12 +120,16 @@ void remove_comments(char *s) {
     }
 }
 
-token_t* get_tokens_from(char* src) {
+token_t* get_tokens_from(char* src, int* n_tokens) {
     char* f_match = NULL;
+    *n_tokens = 0;
     
+    // Preprocessing
     remove_comments(src);
     remove_spaces(src);
     
+    // Create tokens list
+    token_t* tokens = (token_t*) calloc(strlen(src), sizeof(token_t));
     while (1) {
 
         token_t token;
@@ -143,12 +147,12 @@ token_t* get_tokens_from(char* src) {
         }
 
         if (f_match == NULL) {
-            printf("\n");
-            return 0;
+            return tokens;
         }
         sprintf(src, "%.*s", (int)(strlen(src) - strlen(f_match)), src + strlen(f_match));
-        free(f_match);
+        free(f_match); 
+        f_match = NULL;
 
-        printf("%s ", token.src);
+        tokens[(*n_tokens)++] = token;
     }
 }
